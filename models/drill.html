@@ -1,0 +1,35 @@
+<html>
+<body>
+    <button id="clickMe">Load Data</button>
+    <div id="results"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+            $(document).ready(function(){
+
+                $("#clickMe").on("click", function(e){
+                    
+                    $.ajax({
+                        url: "drilldata.php",
+                        method: "GET",
+                        success:function(data){
+                            
+                            parsed_data = JSON.parse(data);
+                            
+                            $.each(parsed_data, function(i, person){
+                                var output = person.first_name + " " + person.lastname +
+                                " is " + person.age + " and lives in " + person.hometown;
+                                
+                                output += "<br>";
+                                
+                                $("#results").append(person.first_name);
+                            });
+                        }
+                    });
+                });
+            }); 
+        
+    </script>
+
+
+</body>
+</html>
