@@ -1,6 +1,8 @@
 <?php
 require_once("../../controllers/includes.php");
 
+$title = "Editing Post";
+
 if(!empty($_GET['id']) ) {
 
     $p_model = new Project; // start project model

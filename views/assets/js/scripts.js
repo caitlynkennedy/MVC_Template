@@ -2,13 +2,13 @@ $(document).ready(function(){
     // code goes here
 
 
-    $("#projectFeed").on('click', '.comment-btn', function(){
+    $(".project-post").on('click', '.comment-btn', function(){
         var comment_loop = $(this).closest('.project-post').find('.comment-loop');
 
         comment_loop.slideToggle();
     });
 
-    $("#projectFeed").on('click', '.delete-comment', function(){
+    $(" .project-post").on('click', '.delete-comment', function(){
         $deleteComment = $(this);
         $userComment = $deleteComment.closest('.user-comment');
         var $commentCount = $deleteComment.closest('.project-post').find('.comment-count');
@@ -31,7 +31,7 @@ $(document).ready(function(){
     * LOVE BUTTON
     */
 
-    $("#projectFeed").on('click', '.love-btn', function(){
+    $(" .project-post").on('click', '.love-btn', function(){
 
         // store the components in variables
         var love_btn = $(this);
@@ -69,7 +69,7 @@ $(document).ready(function(){
     /*
     * SUBMIT COMMENT
     */
-    $("#projectFeed").on('submit', '.comment-form', function(e) {
+    $(".project-post").on('submit', '.comment-form', function(e) {
         e.preventDefault();
 
         // store comment components
@@ -107,7 +107,7 @@ $(document).ready(function(){
                             comment_html += "'><p>";
                             comment_html += "<span class='font-weight-bold comment-username'>" +
                                         comment.username +
-                                        ":</span> ";
+                                        ":</span> " + "<a data-id='"+ comment.id +"' class='delete-comment'><i class='fas fa-trash-alt float-right text-dark'></i></a>";
                             comment_html += comment.comment;
                             comment_html += "</p></div>";
                         }); 

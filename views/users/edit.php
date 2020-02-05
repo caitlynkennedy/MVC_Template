@@ -22,7 +22,7 @@
 
             
     
-        <div class="card col-md-6 mx-auto my-4 z-index">
+        <div class="card col-md-6 mx-auto my-4">
                 <h2 class=" mt-5 mb-4 card-title text-center">Edit Profile</h2>
             
             <div class="img-container m-auto">

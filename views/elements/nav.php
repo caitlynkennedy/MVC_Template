@@ -9,8 +9,7 @@
         <form class="form-inline" id="search_form">
             <input type="search" autocomplete="off" name="search" id="search" class="form-control" placeholder="Search...">
             <div id="search_results">
-
-            </div>
+             </div>
         </form>
 
 

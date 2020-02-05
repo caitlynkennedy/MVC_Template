@@ -37,7 +37,7 @@ require_once("../elements/nav.php");
                 ?> </h4>
             </div>
             <div class="card-img-top">
-                <img src="<?=$project['file_url']?>"class="img-fluid" alt="">
+                <img src="<?=$project['file_url']?>"class="img-fluid w-100" alt="">
             </div>
             <div class="card-body">
                 <h5><?=$project['title']?></h5>
@@ -65,8 +65,37 @@ require_once("../elements/nav.php");
                         ?></span>
                     </span>
                 </div>
-            </div
-        
+
+                <div class="comment-loop">
+                                <?php
+                                $project_comments = $c_model->get_all_by_project_id($project['id']);
+                                foreach($project_comments as $user_comment){
+                                    $my_comment = ($user_comment['user_owns'] == "true") ? "my_comment" :"";
+                                    ?>
+                                    <div class="user-comment <?=$my_comment?>">
+                                    
+                                        <p><span class="font-weight-bold comment-username"><?=$user_comment['username']?>:</span> 
+                                            <?=$user_comment['comment']?> 
+                                            <?php
+                                                if( $user_comment['user_id'] == $_SESSION['user_logged_in'] ){ ?>
+                                                    <a data-id="<?=$user_comment['id']?>" class="delete-comment"><i class="fas fa-trash-alt float-right text-dark"></i></a>
+                                                <?php
+                                                }
+                                            ?>
+                                            
+                                    </div>
+                                    <?php
+                                }
+                                ?>
+
+                    </div>
+                
+                    <hr>
+                    <form class="comment-form" data-project="<?=$project['id']?>">
+                        <input type="text" name="comment" placeholder="Write a comment..." class="mb-2 form-control comment-box">
+                    </form>
+                </div
+                
     
     <?php
     } else {

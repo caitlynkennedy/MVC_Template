@@ -42,7 +42,7 @@ require_once("elements/nav.php");
 
     <div class="row mb-4">
         <div class="col-md-8 mx-auto">
-            <div class="card pink-outline my-5 z-index" id="shareProjectCard">
+            <div class="card pink-outline my-5" id="shareProjectCard">
                 <div class="card-header">
                     <h4 class=" secondary-font pt-2">Share New Idea</h4>
                 </div>
@@ -97,7 +97,7 @@ require_once("elements/nav.php");
                             ?> </h4>
                         </div>
                         <div class="card-img-top">
-                            <img src="<?=$project['file_url']?>"class="img-fluid" alt="">
+                            <img src="<?=$project['file_url']?>"class="img-fluid w-100" alt="">
                         </div>
                         <div class="card-body">
                             <h5><?=$project['title']?></h5>
