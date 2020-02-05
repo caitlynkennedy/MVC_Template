@@ -47,6 +47,7 @@
                     <label for="lastname">Last Name</label>
                     <input type="text" id="lastname" name="lastname" class="form-control" value="<?=$current_user['lastname']?>" required>
                 </div>
+            
                 <div class="form-group">
                     <label for="bio">Bio</label>
                     <textarea type="text" id="bio" name="bio" class="form-control secondary-font"> <?=$current_user['bio']?></textarea>
