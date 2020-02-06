@@ -40,7 +40,7 @@
                 <div class="card-body collapse show" id="loginCardBody" data-parent="#signupAccordion">
                 <?php echo (!empty($_SESSION["login_attempt_msg"]))?$_SESSION["login_attempt_msg"]:''; ?>
                     <form action="/users/login.php" method="post">
-                        <input type="text" name="username" class="form-control mb-3" placeholder="Username or Email" required>
+                        <input type="text" name="username" class="form-control mb-3" placeholder="Email" required>
                         <input type="password" name="password" class="form-control mb-3" placeholder="Password" required>
                         <div class="form-group">
                             <input type="checkbox" name="remember" id="remember" value="true">
